@@ -29,3 +29,12 @@ Main features of the Android Auto Tesla:
 1. Insert SIM into the 4G Dongle, make sure is connectable and disable DHCP services and WiFi Services. As we are not using it for the purpose of using own set of DHCP ip range and also using pure 5.8GHz WiFi from the Pi3B+/Pi4.
 2. Download the latest Raspian OS (Legacy) with Desktop. We need the UI for the whole process. It will be confugure to open starting up the OpenDash only. I will show you how to do this later in the process. [https://downloads.raspberrypi.org/raspios_oldstable_armhf/images/raspios_oldstable_armhf-2022-09-26/2022-09-22-raspios-buster-armhf.img.xz]
 3. Extract the downloaded image into SDCard. I am using Linux for this case:
+```
+xz -d -k -v raspios_oldstable_armhf-2022-09-26/2022-09-22-raspios-buster-armhf.img.xz
+```
+4. From the extracted image, lets write it into the micro sdcard directly:
+```
+dd if=raspios_oldstable_armhf-2022-09-26/2022-09-22-raspios-buster-armhf.img of=/dev/mmblk0 bs=100M status=progress
+```
+5. Once done, put the microsd into the Pi3B+/Pi4B and attach to a temporary monitor for some minor configurations.
+6. Lets power up and wait.
